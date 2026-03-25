@@ -1856,7 +1856,288 @@
             100% { left: 100%; }
         }
 
+        /* ===== UPCOMING INITIATIVES SECTION STYLES ===== */
+        .initiatives-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f5 100%);
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .initiatives-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--primary-teal);
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+
+        .initiatives-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: var(--gold-accent);
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+
+        .initiatives-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .initiatives-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .initiatives-header h2 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .initiatives-header p {
+            font-size: 17px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .initiative-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .initiative-card-banner {
+            height: 12px;
+            width: 100%;
+        }
+
+        .initiative-card-banner.mothers-day {
+            background: linear-gradient(90deg, #FF6B9D, #FF8EC7, #FFB6D9);
+        }
+
+        .initiative-card-banner.baby-shower {
+            background: linear-gradient(90deg, #7ED6DF, #74B9FF, #A29BFE);
+        }
+
+        .initiative-card-banner.fathers-day {
+            background: linear-gradient(90deg, #3498db, #2980b9, #1a5276);
+        }
+
+        .initiative-card-content {
+            padding: 35px 30px;
+        }
+
+        .initiative-emoji {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .initiative-card h3 {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .initiative-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--light-bg);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-teal);
+            margin-bottom: 20px;
+        }
+
+        .initiative-date i {
+            color: var(--gold-accent);
+        }
+
+        .initiative-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .initiative-cta-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .initiative-btn {
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .initiative-btn.primary {
+            background: var(--primary-teal);
+            color: var(--white);
+        }
+
+        .initiative-btn.primary:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(33, 150, 164, 0.4);
+        }
+
+        .initiative-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--primary-teal);
+            color: var(--primary-teal);
+        }
+
+        .initiative-btn.secondary:hover {
+            background: var(--primary-teal);
+            color: var(--white);
+        }
+
+        /* Organizations Section */
+        .organizations-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .organizations-section h3 {
+            font-size: 28px;
+            text-align: center;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .organizations-section > p {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .organizations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .organization-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #e8f4f5 100%);
+            border-radius: 16px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .organization-card:hover {
+            border-color: var(--primary-teal);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(33, 150, 164, 0.15);
+        }
+
+        .organization-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--teal-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--white);
+        }
+
+        .organization-card h4 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .organization-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
+            .initiatives-section {
+                padding: 50px 20px;
+            }
+
+            .initiatives-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .initiative-emoji {
+                font-size: 48px;
+            }
+
+            .initiative-card h3 {
+                font-size: 20px;
+            }
+
+            .initiative-cta-group {
+                flex-direction: column;
+            }
+
+            .initiative-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .organizations-section {
+                padding: 30px 20px;
+            }
+
+            .organizations-grid {
+                grid-template-columns: 1fr;
+            }
+
             .wishlist-hero {
                 padding: 60px 20px;
             }
@@ -2594,6 +2875,116 @@
             <div class="wishlist-intro-content">
                 <h2>Why Your Donations Matter</h2>
                 <p>Behind every item on our wish list is a family working hard to overcome adversity. When you donate household essentials, educational materials, or professional services, you're not just giving things—you're giving stability, opportunity, and dignity. Every contribution, no matter the size, creates ripples of positive change throughout our Detroit community.</p>
+            </div>
+        </div>
+
+        <!-- Upcoming Initiatives Section -->
+        <div class="initiatives-section">
+            <div class="initiatives-content">
+                <div class="initiatives-header">
+                    <h2><i class="fas fa-calendar-star" style="margin-right: 12px; color: var(--gold-accent);"></i>Upcoming Initiatives</h2>
+                    <p>Join us in making a difference through our seasonal blessing drives. Each initiative brings hope, dignity, and essential resources to families in our community during special moments throughout the year.</p>
+                </div>
+
+                <div class="initiatives-grid">
+                    <!-- Mother's Day Blessing Baskets -->
+                    <div class="initiative-card fade-in">
+                        <div class="initiative-card-banner mothers-day"></div>
+                        <div class="initiative-card-content">
+                            <span class="initiative-emoji">🌸</span>
+                            <h3>Mother's Day Blessing Baskets</h3>
+                            <div class="initiative-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                Distribution: May 9, 2026
+                            </div>
+                            <p>Celebrate and honor mothers in our community with beautiful blessing baskets filled with self-care essentials, heartfelt gifts, and tokens of appreciation. Every mom deserves to feel special on her day.</p>
+                            <div class="initiative-cta-group">
+                                <a href="https://givebutter.com/Ces4uG" target="_blank" class="initiative-btn primary">
+                                    <i class="fas fa-heart"></i> Donate Now
+                                </a>
+                                <a href="mailto:EmpowermentPathFoundation@gmail.com?subject=Mother's Day Blessing Baskets - Volunteer" class="initiative-btn secondary">
+                                    <i class="fas fa-hands-helping"></i> Volunteer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Peggy's House Baby Shower Baskets -->
+                    <div class="initiative-card fade-in">
+                        <div class="initiative-card-banner baby-shower"></div>
+                        <div class="initiative-card-content">
+                            <span class="initiative-emoji">👶</span>
+                            <h3>Peggy's House Baby Shower Baskets</h3>
+                            <div class="initiative-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                Distribution: May 23, 2026
+                            </div>
+                            <p>Welcome new life with love! These baby shower baskets provide expecting and new mothers at Peggy's House with essential baby supplies, diapers, clothing, and nurturing items for their little ones.</p>
+                            <div class="initiative-cta-group">
+                                <a href="https://givebutter.com/Ces4uG" target="_blank" class="initiative-btn primary">
+                                    <i class="fas fa-heart"></i> Donate Now
+                                </a>
+                                <a href="mailto:EmpowermentPathFoundation@gmail.com?subject=Baby Shower Baskets - Volunteer" class="initiative-btn secondary">
+                                    <i class="fas fa-hands-helping"></i> Volunteer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Father's Day Blessing Baskets -->
+                    <div class="initiative-card fade-in">
+                        <div class="initiative-card-banner fathers-day"></div>
+                        <div class="initiative-card-content">
+                            <span class="initiative-emoji">👔</span>
+                            <h3>Father's Day Blessing Baskets</h3>
+                            <div class="initiative-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                Distribution: June 20, 2026
+                            </div>
+                            <p>Honor the fathers and father figures in our community with thoughtful blessing baskets celebrating their dedication, strength, and love. Because every dad deserves recognition and appreciation.</p>
+                            <div class="initiative-cta-group">
+                                <a href="https://givebutter.com/Ces4uG" target="_blank" class="initiative-btn primary">
+                                    <i class="fas fa-heart"></i> Donate Now
+                                </a>
+                                <a href="mailto:EmpowermentPathFoundation@gmail.com?subject=Father's Day Blessing Baskets - Volunteer" class="initiative-btn secondary">
+                                    <i class="fas fa-hands-helping"></i> Volunteer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partner Organizations -->
+                <div class="organizations-section">
+                    <h3><i class="fas fa-handshake" style="margin-right: 10px; color: var(--primary-teal);"></i>Our Partner Organizations</h3>
+                    <p>These incredible organizations work alongside us to serve families in need. Your donations support families at:</p>
+                    
+                    <div class="organizations-grid">
+                        <div class="organization-card fade-in">
+                            <div class="organization-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>Peggy's House</h4>
+                            <p>A safe haven providing transitional housing and comprehensive support services for homeless pregnant women and mothers with infants in Metro Detroit.</p>
+                        </div>
+
+                        <div class="organization-card fade-in">
+                            <div class="organization-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>COTS</h4>
+                            <p>Coalition on Temporary Shelter — Detroit's largest provider of services to homeless families and individuals, helping them achieve self-sufficiency and permanent housing.</p>
+                        </div>
+
+                        <div class="organization-card fade-in">
+                            <div class="organization-icon">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <h4>Alternatives for Girls</h4>
+                            <p>Dedicated to helping homeless and high-risk girls and young women avoid violence, teen pregnancy, and exploitation, while building self-esteem and independence.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
