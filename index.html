@@ -1195,6 +1195,730 @@
                 transform: translateY(0);
             }
         }
+
+        /* ===== WISH LIST SECTION STYLES ===== */
+        .wishlist-hero {
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--teal-dark) 50%, var(--dark-navy) 100%);
+            padding: 80px 40px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wishlist-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .wishlist-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .wishlist-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .wishlist-hero .subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .wishlist-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .wishlist-stat {
+            text-align: center;
+        }
+
+        .wishlist-stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-accent);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .wishlist-stat-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        .wishlist-intro {
+            background: var(--light-bg);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .wishlist-intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .wishlist-intro h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .wishlist-intro p {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .wishlist-categories {
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .wishlist-categories h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .wishlist-categories > p {
+            text-align: center;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 16px;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 12px 28px;
+            border: 2px solid var(--primary-teal);
+            border-radius: 50px;
+            background: transparent;
+            color: var(--primary-teal);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--primary-teal);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(33, 150, 164, 0.3);
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .wishlist-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .wishlist-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .wishlist-card-header {
+            padding: 30px 25px 20px;
+            position: relative;
+        }
+
+        .wishlist-card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--white);
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .wishlist-card-icon.urgent { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .wishlist-card-icon.high { background: linear-gradient(135deg, var(--gold-accent), #c79530); }
+        .wishlist-card-icon.family { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .wishlist-card-icon.education { background: linear-gradient(135deg, var(--primary-teal), var(--teal-dark)); }
+        .wishlist-card-icon.garden { background: linear-gradient(135deg, #27ae60, #1e8449); }
+        .wishlist-card-icon.tech { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .wishlist-card-icon.office { background: linear-gradient(135deg, #34495e, #2c3e50); }
+        .wishlist-card-icon.services { background: linear-gradient(135deg, #e67e22, #d35400); }
+
+        .urgency-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .urgency-badge.urgent {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        .urgency-badge.high {
+            background: linear-gradient(135deg, var(--gold-accent), #c79530);
+            color: white;
+        }
+
+        .urgency-badge.general {
+            background: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+        }
+
+        .wishlist-card h3 {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .wishlist-card-body {
+            padding: 0 25px 25px;
+        }
+
+        .wishlist-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .wishlist-items {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .wishlist-items li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            padding-left: 8px;
+            margin-left: -8px;
+        }
+
+        .wishlist-items li:hover {
+            background: var(--light-bg);
+            padding-left: 12px;
+        }
+
+        .wishlist-items li:last-child {
+            border-bottom: none;
+        }
+
+        .wishlist-items li i {
+            color: var(--primary-teal);
+            font-size: 12px;
+            width: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .wishlist-items li:hover i {
+            transform: scale(1.2);
+            color: var(--gold-accent);
+        }
+
+        .wishlist-card-footer {
+            padding: 20px 25px;
+            background: var(--light-bg);
+            border-top: 1px solid #eee;
+        }
+
+        .impact-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .impact-text i {
+            color: var(--gold-accent);
+            font-size: 16px;
+        }
+
+        .wishlist-cta-section {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--teal-dark) 100%);
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wishlist-cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .wishlist-cta-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wishlist-cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .wishlist-cta-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .wishlist-cta-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .wishlist-cta-card i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--gold-accent);
+        }
+
+        .wishlist-cta-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .wishlist-cta-card p {
+            font-size: 15px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .wishlist-cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .wishlist-cta-btn.primary {
+            background: var(--gold-accent);
+            color: var(--white);
+        }
+
+        .wishlist-cta-btn.primary:hover {
+            background: #c79530;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 165, 67, 0.4);
+        }
+
+        .wishlist-cta-btn.secondary {
+            background: var(--white);
+            color: var(--dark-navy);
+        }
+
+        .wishlist-cta-btn.secondary:hover {
+            background: var(--light-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .wishlist-cta-btn.outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .wishlist-cta-btn.outline:hover {
+            background: var(--white);
+            color: var(--dark-navy);
+        }
+
+        .wishlist-faq {
+            background: var(--white);
+            padding: 80px 40px;
+        }
+
+        .wishlist-faq-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .wishlist-faq h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 25px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .faq-question i {
+            color: var(--primary-teal);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-top: 20px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .wishlist-testimonial {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #e8f4f5 100%);
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wishlist-testimonial::before,
+        .wishlist-testimonial::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--primary-teal);
+            opacity: 0.05;
+        }
+
+        .wishlist-testimonial::before {
+            top: -100px;
+            left: -100px;
+        }
+
+        .wishlist-testimonial::after {
+            bottom: -100px;
+            right: -100px;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-quote {
+            font-size: 26px;
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 80px;
+            color: var(--primary-teal);
+            opacity: 0.2;
+            display: block;
+            line-height: 0.5;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-teal);
+        }
+
+        .testimonial-role {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Campaign Banner Styles */
+        .campaign-banner {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            padding: 20px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .campaign-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .campaign-banner-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .campaign-banner i {
+            font-size: 28px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .campaign-banner h3 {
+            font-size: 20px;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .campaign-banner p {
+            font-size: 15px;
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        .campaign-banner .campaign-btn {
+            background: white;
+            color: #e74c3c;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .campaign-banner .campaign-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Progress Bar for Goals */
+        .goal-progress {
+            margin-top: 15px;
+        }
+
+        .goal-progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .goal-progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--gold-accent));
+            transition: width 0.5s ease;
+        }
+
+        .goal-progress-text {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Card hover effects */
+        .wishlist-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--gold-accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .wishlist-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Shimmer effect for urgent badges */
+        .urgency-badge.urgent::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .wishlist-hero {
+                padding: 60px 20px;
+            }
+
+            .wishlist-hero h1 {
+                font-size: 32px;
+            }
+
+            .wishlist-stats {
+                gap: 30px;
+            }
+
+            .wishlist-stat-number {
+                font-size: 36px;
+            }
+
+            .wishlist-categories {
+                padding: 50px 20px;
+            }
+
+            .wishlist-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-tabs {
+                gap: 10px;
+            }
+
+            .category-tab {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .wishlist-cta-section {
+                padding: 50px 20px;
+            }
+
+            .wishlist-cta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wishlist-faq {
+                padding: 50px 20px;
+            }
+
+            .testimonial-quote {
+                font-size: 20px;
+            }
+
+            .campaign-banner {
+                padding: 15px 20px;
+            }
+
+            .campaign-banner-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .campaign-banner h3 {
+                font-size: 18px;
+            }
+        }
     </style>
 
     <!-- AEO Schema Markup -->
@@ -1254,7 +1978,7 @@
                     <a href="#" onclick="navigateTo('volunteer'); return false;">Volunteer</a>
                     <a href="#" onclick="navigateTo('donate'); return false;">Donate</a>
                     <a href="#" onclick="navigateTo('corporate-partners'); return false;">Corporate Partners</a>
-                    <a href="#" onclick="navigateTo('in-kind'); return false;">In-Kind Donations</a>
+                    <a href="#" onclick="navigateTo('wishlist'); return false;">Wish List</a>
                     <a href="#" onclick="navigateTo('host-event'); return false;">Host an Event</a>
                 </div>
             </li>
@@ -1829,27 +2553,415 @@
         </div>
     </section>
 
-    <!-- GET INVOLVED - IN-KIND DONATIONS -->
-    <section id="in-kind" class="page-section">
-        <div class="content-section">
-            <h1>In-Kind Donations</h1>
-            <p>Your donations of goods and services directly support the families and programs we serve. We're grateful for contributions of the following items:</p>
+    <!-- GET INVOLVED - WISH LIST -->
+    <section id="wishlist" class="page-section">
+        <!-- Wish List Hero Section -->
+        <div class="wishlist-hero">
+            <div class="wishlist-hero-content">
+                <h1><i class="fas fa-gift" style="margin-right: 15px;"></i>Our Wish List</h1>
+                <p class="subtitle">Every item donated puts hope in the hands of Detroit families. Your generosity provides essential resources that empower single parents to build brighter futures for themselves and their children.</p>
+                <div class="wishlist-stats">
+                    <div class="wishlist-stat">
+                        <div class="wishlist-stat-number">200+</div>
+                        <div class="wishlist-stat-label">Families Served</div>
+                    </div>
+                    <div class="wishlist-stat">
+                        <div class="wishlist-stat-number">100%</div>
+                        <div class="wishlist-stat-label">Goes to Families</div>
+                    </div>
+                    <div class="wishlist-stat">
+                        <div class="wishlist-stat-number">6</div>
+                        <div class="wishlist-stat-label">Active Programs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <h2>Most Needed Items:</h2>
-            <ul style="list-style-position: inside; margin-bottom: 20px;">
-                <li><strong>Household Essentials:</strong> Hygiene products, cleaning supplies, kitchenware, bedding, clothing</li>
-                <li><strong>Food & Nutrition:</strong> Non-perishable groceries, fresh produce (for our gardens), healthy snacks</li>
-                <li><strong>Educational Materials:</strong> Books, school supplies, computers, technology for training</li>
-                <li><strong>Equipment:</strong> Gardening tools, lighting and audio equipment (for training), office supplies</li>
-                <li><strong>Services:</strong> Professional services, transportation, mentorship, training expertise</li>
-                <li><strong>Professional Items:</strong> Business attire for job interviews, childcare items, transportation passes</li>
-            </ul>
+        <!-- Seasonal Campaign Banner (easily updateable) -->
+        <div class="campaign-banner">
+            <div class="campaign-banner-content">
+                <i class="fas fa-star"></i>
+                <div>
+                    <h3>Spring Essentials Drive</h3>
+                    <p>Help us stock up on cleaning supplies, garden tools, and children's spring clothing!</p>
+                </div>
+                <a href="mailto:EmpowermentPathFoundation@gmail.com?subject=Spring Essentials Drive" class="campaign-btn">Join the Drive</a>
+            </div>
+        </div>
 
-            <h2>How to Donate In-Kind</h2>
-            <p>Contact us to arrange pickup or drop-off of in-kind donations. Please reach out to <a href="mailto:EmpowermentPathFoundation@gmail.com">EmpowermentPathFoundation@gmail.com</a> or call <a href="tel:(313)937-6077">(313) 937-6077</a> to discuss your donation and logistics.</p>
+        <!-- Intro Section -->
+        <div class="wishlist-intro">
+            <div class="wishlist-intro-content">
+                <h2>Why Your Donations Matter</h2>
+                <p>Behind every item on our wish list is a family working hard to overcome adversity. When you donate household essentials, educational materials, or professional services, you're not just giving things—you're giving stability, opportunity, and dignity. Every contribution, no matter the size, creates ripples of positive change throughout our Detroit community.</p>
+            </div>
+        </div>
 
-            <h2>Special Projects</h2>
-            <p>Periodically, we launch special in-kind donation drives for specific community needs. Follow us on social media or sign up for our newsletter to learn about current urgent needs.</p>
+        <!-- Category Cards Section -->
+        <div class="wishlist-categories">
+            <h2>What We Need Most</h2>
+            <p>Browse our current needs by category. Items marked "Urgent" are in immediate demand and help families in crisis situations.</p>
+
+            <div class="category-tabs">
+                <button class="category-tab active" onclick="filterWishlist('all')">All Items</button>
+                <button class="category-tab" onclick="filterWishlist('urgent')">Urgent Needs</button>
+                <button class="category-tab" onclick="filterWishlist('family')">Family & Home</button>
+                <button class="category-tab" onclick="filterWishlist('education')">Education</button>
+                <button class="category-tab" onclick="filterWishlist('program')">Programs</button>
+            </div>
+
+            <div class="wishlist-grid">
+                <!-- Emergency Essentials Card -->
+                <div class="wishlist-card fade-in" data-category="urgent family">
+                    <div class="wishlist-card-header">
+                        <span class="urgency-badge urgent">Urgent Need</span>
+                        <div class="wishlist-card-icon urgent">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h3>Emergency Essentials</h3>
+                    </div>
+                    <div class="wishlist-card-body">
+                        <p>Critical items for families facing immediate hardship. These supplies provide relief during crisis moments.</p>
+                        <ul class="wishlist-items">
+                            <li><i class="fas fa-check-circle"></i> Diapers (all sizes) & baby wipes</li>
+                            <li><i class="fas fa-check-circle"></i> Non-perishable food items</li>
+                            <li><i class="fas fa-check-circle"></i> Hygiene products (soap, toothpaste, deodorant)</li>
+                            <li><i class="fas fa-check-circle"></i> Feminine care products</li>
+                            <li><i class="fas fa-check-circle"></i> First aid supplies</li>
+                            <li><i class="fas fa-check-circle"></i> Cleaning supplies</li>
+                        </ul>
+                        <div class="goal-progress">
+                            <div class="goal-progress-bar">
+                                <div class="goal-progress-fill" style="width: 65%;"></div>
+                            </div>
+                            <div class="goal-progress-text">
+                                <span><strong>65%</strong> of monthly goal met</span>
+                                <span>Help us reach 100%!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wishlist-card-footer">
+                        <div class="impact-text">
+                            <i class="fas fa-heart"></i>
+                            <span>Supports 50+ families in crisis each month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Housing & Home Setup Card -->
+                <div class="wishlist-card fade-in" data-category="urgent family">
+                    <div class="wishlist-card-header">
+                        <span class="urgency-badge high">High Priority</span>
+                        <div class="wishlist-card-icon high">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Housing & Home Setup</h3>
+                    </div>
+                    <div class="wishlist-card-body">
+                        <p>For families transitioning to stable housing through The Duplex Initiative and beyond.</p>
+                        <ul class="wishlist-items">
+                            <li><i class="fas fa-check-circle"></i> Bedding sets (twin, full, queen)</li>
+                            <li><i class="fas fa-check-circle"></i> Pillows & blankets</li>
+                            <li><i class="fas fa-check-circle"></i> Towels & washcloths</li>
+                            <li><i class="fas fa-check-circle"></i> Kitchen essentials (pots, pans, utensils)</li>
+                            <li><i class="fas fa-check-circle"></i> Small appliances (toaster, coffee maker)</li>
+                            <li><i class="fas fa-check-circle"></i> Storage containers & organizers</li>
+                        </ul>
+                        <div class="goal-progress">
+                            <div class="goal-progress-bar">
+                                <div class="goal-progress-fill" style="width: 40%;"></div>
+                            </div>
+                            <div class="goal-progress-text">
+                                <span><strong>3 of 8</strong> home kits funded</span>
+                                <span>Help a family!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wishlist-card-footer">
+                        <div class="impact-text">
+                            <i class="fas fa-heart"></i>
+                            <span>Helps families create stable, comfortable homes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Children & Family Card -->
+                <div class="wishlist-card fade-in" data-category="family">
+                    <div class="wishlist-card-header">
+                        <span class="urgency-badge high">High Priority</span>
+                        <div class="wishlist-card-icon family">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Children & Family</h3>
+                    </div>
+                    <div class="wishlist-card-body">
+                        <p>Supporting children's development and family well-being with essential items.</p>
+                        <ul class="wishlist-items">
+                            <li><i class="fas fa-check-circle"></i> Children's books (all ages)</li>
+                            <li><i class="fas fa-check-circle"></i> Educational toys & games</li>
+                            <li><i class="fas fa-check-circle"></i> Arts & crafts supplies</li>
+                            <li><i class="fas fa-check-circle"></i> Gently used children's clothing</li>
+                            <li><i class="fas fa-check-circle"></i> Car seats & strollers</li>
+                            <li><i class="fas fa-check-circle"></i> Baby care essentials</li>
+                        </ul>
+                    </div>
+                    <div class="wishlist-card-footer">
+                        <div class="impact-text">
+                            <i class="fas fa-heart"></i>
+                            <span>Nurtures healthy childhood development</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Learning Card -->
+                <div class="wishlist-card fade-in" data-category="education">
+                    <div class="wishlist-card-header">
+                        <span class="urgency-badge general">General Need</span>
+                        <div class="wishlist-card-icon education">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Education & Learning</h3>
+                    </div>
+                    <div class="wishlist-card-body">
+                        <p>Resources for our life skills workshops and educational programs.</p>
+                        <ul class="wishlist-items">
+                            <li><i class="fas fa-check-circle"></i> School supplies (notebooks, pens, folders)</li>
+                            <li><i class="fas fa-check-circle"></i> Backpacks</li>
+                            <li><i class="fas fa-check-circle"></i> Laptops & tablets (new or gently used)</li>
+                            <li><i class="fas fa-check-circle"></i> Printer paper & ink cartridges</li>
+                            <li><i class="fas fa-check-circle"></i> Financial literacy workbooks</li>
+                            <li><i class="fas fa-check-circle"></i> GED preparation materials</li>
+                        </ul>
+                    </div>
+                    <div class="wishlist-card-footer">
+                        <div class="impact-text">
+                            <i class="fas fa-heart"></i>
+                            <span>Empowers lifelong learning & growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Garden & Agriculture Card -->
+                <div class="wishlist-card fade-in" data-category="program">
+                    <div class="wishlist-card-header">
+                        <span class="urgency-badge general">General Need</span>
+                        <div class="wishlist-card-icon garden">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Garden & Agriculture</h3>
+                    </div>
+                    <div class="wishlist-card-body">
+                        <p>Supplies for our urban farming and food security programs.</p>
+                        <ul class="wishlist-items">
+                            <li><i class="fas fa-check-circle"></i> Gardening hand tools</li>
+                            <li><i class="fas fa-check-circle"></i> Seeds (vegetables, herbs, flowers)</li>
+                            <li><i class="fas fa-check-circle"></i> Potting soil & compost</li>
+                            <li><i class="fas fa-check-circle"></i> Garden hoses & watering cans</li>
+                            <li><i class="fas fa-check-circle"></i> Raised bed materials</li>
+                            <li><i class="fas fa-check-circle"></i> Gardening gloves</li>
+                        </ul>
+                    </div>
+                    <div class="wishlist-card-footer">
+                        <div class="impact-text">
+                            <i class="fas fa-heart"></i>
+                            <span>Builds food security & entrepreneurship</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Production Training Card -->
+                <div class="wishlist-card fade-in" data-category="program education">
+                    <div class="wishlist-card-header">
+                        <span class="urgency-badge high">High Priority</span>
+                        <div class="wishlist-card-icon tech">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Technical Production Training</h3>
+                    </div>
+                    <div class="wishlist-card-body">
+                        <p>Equipment for our career pathway program in lighting, audio, and event production.</p>
+                        <ul class="wishlist-items">
+                            <li><i class="fas fa-check-circle"></i> Stage lighting equipment</li>
+                            <li><i class="fas fa-check-circle"></i> Audio cables & accessories</li>
+                            <li><i class="fas fa-check-circle"></i> Microphones & stands</li>
+                            <li><i class="fas fa-check-circle"></i> Portable PA systems</li>
+                            <li><i class="fas fa-check-circle"></i> Video production equipment</li>
+                            <li><i class="fas fa-check-circle"></i> Gaffer tape & production supplies</li>
+                        </ul>
+                    </div>
+                    <div class="wishlist-card-footer">
+                        <div class="impact-text">
+                            <i class="fas fa-heart"></i>
+                            <span>Opens doors to $40K-$70K+ careers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office & Operations Card -->
+                <div class="wishlist-card fade-in" data-category="program">
+                    <div class="wishlist-card-header">
+                        <span class="urgency-badge general">General Need</span>
+                        <div class="wishlist-card-icon office">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Office & Operations</h3>
+                    </div>
+                    <div class="wishlist-card-body">
+                        <p>Supplies that keep our programs running smoothly.</p>
+                        <ul class="wishlist-items">
+                            <li><i class="fas fa-check-circle"></i> Office supplies (paper, folders, binders)</li>
+                            <li><i class="fas fa-check-circle"></i> Printer ink & toner</li>
+                            <li><i class="fas fa-check-circle"></i> Folding tables & chairs</li>
+                            <li><i class="fas fa-check-circle"></i> Whiteboards & markers</li>
+                            <li><i class="fas fa-check-circle"></i> Filing cabinets</li>
+                            <li><i class="fas fa-check-circle"></i> Coffee & refreshments for workshops</li>
+                        </ul>
+                    </div>
+                    <div class="wishlist-card-footer">
+                        <div class="impact-text">
+                            <i class="fas fa-heart"></i>
+                            <span>Enables us to serve more families</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Services Card -->
+                <div class="wishlist-card fade-in" data-category="program">
+                    <div class="wishlist-card-header">
+                        <span class="urgency-badge high">High Priority</span>
+                        <div class="wishlist-card-icon services">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Professional Services</h3>
+                    </div>
+                    <div class="wishlist-card-body">
+                        <p>Pro bono expertise that strengthens our programs and supports families.</p>
+                        <ul class="wishlist-items">
+                            <li><i class="fas fa-check-circle"></i> Legal services & consultation</li>
+                            <li><i class="fas fa-check-circle"></i> Tax preparation assistance</li>
+                            <li><i class="fas fa-check-circle"></i> Resume writing & career coaching</li>
+                            <li><i class="fas fa-check-circle"></i> Mental health counseling</li>
+                            <li><i class="fas fa-check-circle"></i> Photography for events</li>
+                            <li><i class="fas fa-check-circle"></i> Marketing & graphic design</li>
+                        </ul>
+                    </div>
+                    <div class="wishlist-card-footer">
+                        <div class="impact-text">
+                            <i class="fas fa-heart"></i>
+                            <span>Your expertise transforms lives</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Section -->
+        <div class="wishlist-testimonial">
+            <div class="testimonial-content">
+                <div class="testimonial-quote">
+                    When I received the household items from EPF, it felt like the community was wrapping their arms around me and my children. For the first time in months, our house felt like a home.
+                </div>
+                <div class="testimonial-author">— EPF Program Participant</div>
+                <div class="testimonial-role">Single mother of three, Detroit</div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="wishlist-cta-section">
+            <div class="wishlist-cta-content">
+                <div class="wishlist-cta-grid">
+                    <div class="wishlist-cta-card">
+                        <i class="fab fa-amazon"></i>
+                        <h3>Amazon Wish List</h3>
+                        <p>Shop directly from our Amazon Wish List and have items delivered straight to our office. Easy, convenient, and impactful.</p>
+                        <a href="mailto:EmpowermentPathFoundation@gmail.com?subject=Amazon Wish List Request" class="wishlist-cta-btn primary">Request Amazon Link</a>
+                    </div>
+                    <div class="wishlist-cta-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Drop Off Donations</h3>
+                        <p>Bring your donations to our Detroit location. We'll provide a receipt for your tax-deductible contribution.</p>
+                        <a href="mailto:EmpowermentPathFoundation@gmail.com?subject=Donation Drop-off" class="wishlist-cta-btn secondary">Schedule Drop-off</a>
+                    </div>
+                    <div class="wishlist-cta-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>Organize a Drive</h3>
+                        <p>Rally your workplace, school, or community to collect items. We provide promotional materials and support.</p>
+                        <a href="mailto:EmpowermentPathFoundation@gmail.com?subject=Donation Drive Interest" class="wishlist-cta-btn outline">Start a Drive</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="wishlist-faq">
+            <div class="wishlist-faq-content">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What condition should donated items be in?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We accept new and gently used items in clean, working condition. Items should be something you'd feel comfortable giving to a family member. We cannot accept items that are stained, broken, or have missing parts.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Is my donation tax-deductible?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! EPF operates under Bringing Back the Block, a registered 501(c)(3) nonprofit (EIN: 83-4245282). We provide donation receipts for all in-kind contributions, which are tax-deductible to the extent allowed by law.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can you pick up large donations?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        For larger donations (furniture, appliances, bulk items), please contact us to arrange pickup. We may be able to coordinate transportation depending on location and availability. Email us at EmpowermentPathFoundation@gmail.com.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How do I know what's most needed right now?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Items marked "Urgent Need" on this page are our highest priorities. You can also sign up for our newsletter or follow us on social media for real-time updates on specific needs during seasonal drives and emergency situations.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can businesses sponsor specific items?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! We welcome corporate sponsorships and bulk donations. Businesses can sponsor specific program needs, fund seasonal drives, or provide ongoing support. Contact us to discuss partnership opportunities.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="content-section" style="text-align: center; padding: 60px 40px;">
+            <h2 style="margin-bottom: 20px;">Ready to Make a Difference?</h2>
+            <p style="font-size: 17px; color: #555; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Contact us to arrange your donation or learn more about our most urgent needs. Every contribution helps Detroit families build brighter futures.</p>
+            <p style="margin-bottom: 15px;">
+                <strong>Email:</strong> <a href="mailto:EmpowermentPathFoundation@gmail.com" style="color: var(--primary-teal);">EmpowermentPathFoundation@gmail.com</a>
+            </p>
+            <p style="margin-bottom: 30px;">
+                <strong>Phone:</strong> <a href="tel:(313)937-6077" style="color: var(--primary-teal);">(313) 937-6077</a>
+            </p>
+            <a href="https://givebutter.com/Ces4uG" target="_blank" class="btn btn-secondary" style="font-size: 16px; padding: 14px 36px;">
+                <i class="fas fa-heart" style="margin-right: 8px;"></i> Prefer to Give Funds? Donate Here
+            </a>
         </div>
     </section>
 
@@ -2111,6 +3223,7 @@
                 <a href="#" onclick="navigateTo('about-mission'); return false;">About Us</a>
                 <a href="#" onclick="navigateTo('programs'); return false;">Programs & Services</a>
                 <a href="#" onclick="navigateTo('board-directors'); return false;">Board of Directors</a>
+                <a href="#" onclick="navigateTo('wishlist'); return false;">Wish List</a>
                 <a href="#" onclick="navigateTo('get-involved'); return false;">Get Involved</a>
                 <a href="#" onclick="navigateTo('contact'); return false;">Contact Us</a>
             </div>
@@ -2268,6 +3381,53 @@
             const name = event.target.querySelector('#contact-name').value;
             alert('Thank you for your message, ' + name + '! We\'ll get back to you soon.');
             event.target.reset();
+        }
+
+        // Wish List Category Filtering
+        function filterWishlist(category) {
+            const cards = document.querySelectorAll('.wishlist-card');
+            const tabs = document.querySelectorAll('.category-tab');
+            
+            // Update active tab
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter cards with animation
+            cards.forEach(card => {
+                const cardCategories = card.getAttribute('data-category') || '';
+                
+                if (category === 'all' || cardCategories.includes(category)) {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.transition = 'opacity 0.3s ease';
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(item) {
+            const allItems = document.querySelectorAll('.faq-item');
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            allItems.forEach(faq => faq.classList.remove('active'));
+            
+            // If item wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active');
+            }
         }
 
         // Hash-based routing
