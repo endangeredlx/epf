@@ -1968,6 +1968,13 @@
             margin-bottom: 12px;
         }
 
+        .initiative-dates {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
         .initiative-date {
             display: inline-flex;
             align-items: center;
@@ -1978,11 +1985,25 @@
             font-size: 14px;
             font-weight: 600;
             color: var(--primary-teal);
-            margin-bottom: 20px;
         }
 
         .initiative-date i {
             color: var(--gold-accent);
+        }
+
+        .initiative-date.assembly {
+            background: linear-gradient(135deg, rgba(212, 165, 67, 0.15), rgba(212, 165, 67, 0.05));
+            color: var(--dark-navy);
+            font-size: 13px;
+        }
+
+        .initiative-date.assembly i {
+            color: var(--primary-teal);
+        }
+
+        .initiative-date.assembly .venue {
+            color: var(--gold-accent);
+            font-weight: 700;
         }
 
         .initiative-card p {
@@ -2893,9 +2914,15 @@
                         <div class="initiative-card-content">
                             <span class="initiative-emoji">🌸</span>
                             <h3>Mother's Day Blessing Baskets</h3>
-                            <div class="initiative-date">
-                                <i class="fas fa-calendar-alt"></i>
-                                Distribution: May 9, 2026
+                            <div class="initiative-dates">
+                                <div class="initiative-date assembly">
+                                    <i class="fas fa-tools"></i>
+                                    Assembly: May 2, 2026 @ <span class="venue">The Locker Room</span>
+                                </div>
+                                <div class="initiative-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Distribution: May 9, 2026
+                                </div>
                             </div>
                             <p>Celebrate and honor mothers in our community with beautiful blessing baskets filled with self-care essentials, heartfelt gifts, and tokens of appreciation. Every mom deserves to feel special on her day.</p>
                             <div class="initiative-cta-group">
@@ -2915,9 +2942,11 @@
                         <div class="initiative-card-content">
                             <span class="initiative-emoji">👶</span>
                             <h3>Peggy's House Baby Shower Baskets</h3>
-                            <div class="initiative-date">
-                                <i class="fas fa-calendar-alt"></i>
-                                Distribution: May 23, 2026
+                            <div class="initiative-dates">
+                                <div class="initiative-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Distribution: May 23, 2026
+                                </div>
                             </div>
                             <p>Welcome new life with love! These baby shower baskets provide expecting and new mothers at Peggy's House with essential baby supplies, diapers, clothing, and nurturing items for their little ones.</p>
                             <div class="initiative-cta-group">
@@ -2937,9 +2966,15 @@
                         <div class="initiative-card-content">
                             <span class="initiative-emoji">👔</span>
                             <h3>Father's Day Blessing Baskets</h3>
-                            <div class="initiative-date">
-                                <i class="fas fa-calendar-alt"></i>
-                                Distribution: June 20, 2026
+                            <div class="initiative-dates">
+                                <div class="initiative-date assembly">
+                                    <i class="fas fa-tools"></i>
+                                    Assembly: June 13, 2026 @ <span class="venue">The Locker Room</span>
+                                </div>
+                                <div class="initiative-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Distribution: June 20, 2026
+                                </div>
                             </div>
                             <p>Honor the fathers and father figures in our community with thoughtful blessing baskets celebrating their dedication, strength, and love. Because every dad deserves recognition and appreciation.</p>
                             <div class="initiative-cta-group">
