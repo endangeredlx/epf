@@ -4,327 +4,1063 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2026 Events | Empowerment Path Foundation</title>
+  <meta name="description" content="Join EPF's 2026 events supporting single-parent families in Detroit. From Mother's Day celebrations to our annual gala, every event creates opportunities and builds community.">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary-teal: #2196A4;
+      --teal-dark: #1a7a8a;
+      --teal-light: #e8f6f7;
+      --gold-accent: #D4A543;
+      --gold-light: #f5e6c8;
+      --dark-navy: #3a3f47;
+      --text-dark: #333333;
+      --text-muted: #666666;
+      --light-bg: #f7f9fc;
+      --white: #ffffff;
+      --warm-cream: #FFF9F0;
+      --rose: #E8B4B8;
+      --lavender: #B8A9C9;
+      --coral: #F4A261;
+      --mint: #A8DADC;
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body { 
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; 
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
+      background: var(--warm-cream);
       min-height: 100vh;
-      padding: 20px;
+      color: var(--text-dark);
+      line-height: 1.7;
     }
-    .container { max-width: 900px; margin: 0 auto; }
-    header {
-      text-align: center;
-      color: white;
-      padding: 40px 20px;
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
     }
-    header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-    header p { font-size: 1.2em; opacity: 0.9; }
-    .events-grid { display: grid; gap: 20px; margin-top: 30px; }
-    .event-card {
-      background: white;
-      border-radius: 16px;
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-teal) 0%, var(--teal-dark) 50%, var(--dark-navy) 100%);
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      padding: 60px 20px 80px;
+      text-align: center;
+      color: var(--white);
     }
-    .event-card:hover { transform: translateY(-5px); }
-    .event-header {
-      padding: 20px 25px;
-      color: white;
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero h1 { 
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 .year {
+      color: var(--gold-accent);
+      font-weight: 900;
+    }
+
+    .hero p { 
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-weight: 400;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-tagline i {
+      color: var(--gold-accent);
+    }
+
+    /* Wave divider */
+    .wave-divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave-divider svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 60px;
+    }
+
+    .wave-divider .shape-fill {
+      fill: var(--warm-cream);
+    }
+
+    /* ===== CONTAINER ===== */
+    .container { 
+      max-width: 1100px; 
+      margin: 0 auto; 
+      padding: 0 20px;
+    }
+
+    /* ===== INTRO SECTION ===== */
+    .intro-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--white);
+    }
+
+    .intro-section h2 {
+      font-size: 2rem;
+      color: var(--dark-navy);
+      margin-bottom: 15px;
+    }
+
+    .intro-section p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .intro-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .intro-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .intro-icon i {
+      font-size: 2rem;
+      color: var(--primary-teal);
+      background: var(--teal-light);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: center;
+      transition: all 0.3s ease;
     }
-    .event-emoji { font-size: 2.5em; }
-    .event-date { font-size: 0.9em; opacity: 0.9; }
-    .event-title { font-size: 1.3em; font-weight: bold; }
-    .event-body { padding: 25px; }
-    .event-body ul { 
-      list-style: none; 
-      line-height: 2;
+
+    .intro-icon:hover i {
+      transform: scale(1.1);
+      background: var(--primary-teal);
+      color: var(--white);
     }
-    .event-body li::before {
-      content: "✓ ";
-      color: #667eea;
-      font-weight: bold;
+
+    .intro-icon span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
     }
-    .event-body .highlight {
-      background: #f0f4ff;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 15px;
+
+    /* ===== EVENTS GRID ===== */
+    .events-section {
+      padding: 60px 20px 80px;
     }
-    /* Color themes for each event */
-    .may .event-header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-    .june .event-header { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-    .july .event-header { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-    .august .event-header { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; }
-    .september .event-header { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333; }
-    .october .event-header { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333; }
-    .november .event-header { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
-    .december-baskets .event-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-    .december-gala .event-header { background: linear-gradient(135deg, #f5af19 0%, #f12711 100%); }
-    
-    .impact-section {
-      background: white;
-      border-radius: 16px;
+
+    .events-grid { 
+      display: grid; 
+      gap: 30px;
+    }
+
+    /* ===== EVENT CARD ===== */
+    .event-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .event-card:hover { 
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(33, 150, 164, 0.15);
+    }
+
+    .event-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--primary-teal);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .event-card:hover::after {
+      opacity: 1;
+    }
+
+    .event-header {
+      padding: 25px 30px;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .event-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      transition: transform 0.5s ease;
+    }
+
+    .event-card:hover .event-header::before {
+      transform: translate(20%, -20%);
+    }
+
+    .event-emoji { 
+      font-size: 3rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .event-card:hover .event-emoji {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .event-header-text {
+      z-index: 1;
+    }
+
+    .event-date { 
+      font-size: 0.9rem;
+      opacity: 0.9;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .event-date i {
+      font-size: 0.85rem;
+    }
+
+    .event-title { 
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 5px;
+      line-height: 1.3;
+    }
+
+    .event-body { 
       padding: 30px;
-      margin-top: 30px;
-      text-align: center;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     }
-    .impact-section h2 { color: #667eea; margin-bottom: 20px; }
+
+    .event-body ul { 
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .event-body li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .event-body li::before {
+      content: "✓";
+      color: var(--primary-teal);
+      font-weight: bold;
+      background: var(--teal-light);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .event-body li strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .event-highlight {
+      background: linear-gradient(135deg, var(--teal-light) 0%, var(--gold-light) 100%);
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--dark-navy);
+      border-left: 4px solid var(--gold-accent);
+    }
+
+    .event-highlight i {
+      font-size: 1.3rem;
+      color: var(--gold-accent);
+    }
+
+    /* Event color themes */
+    .may .event-header { 
+      background: linear-gradient(135deg, #F48FB1 0%, #E91E63 100%); 
+    }
+    .june .event-header { 
+      background: linear-gradient(135deg, var(--primary-teal) 0%, #00838F 100%); 
+    }
+    .july .event-header { 
+      background: linear-gradient(135deg, #FFB74D 0%, #F57C00 100%); 
+    }
+    .august .event-header { 
+      background: linear-gradient(135deg, #81C784 0%, #388E3C 100%); 
+    }
+    .september .event-header { 
+      background: linear-gradient(135deg, #B39DDB 0%, #7E57C2 100%); 
+    }
+    .october .event-header { 
+      background: linear-gradient(135deg, #FFAB91 0%, #E64A19 100%); 
+    }
+    .november .event-header { 
+      background: linear-gradient(135deg, var(--coral) 0%, #D4835C 100%); 
+    }
+    .december-baskets .event-header { 
+      background: linear-gradient(135deg, #4DB6AC 0%, #00796B 100%); 
+    }
+    .december-gala .event-header { 
+      background: linear-gradient(135deg, var(--gold-accent) 0%, #B8860B 100%); 
+    }
+
+    /* ===== SIGNATURE EVENT BADGE ===== */
+    .signature-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--gold-accent);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(212, 165, 67, 0.4);
+      z-index: 2;
+    }
+
+    /* ===== IMPACT SECTION ===== */
+    .impact-section {
+      background: linear-gradient(135deg, var(--dark-navy) 0%, #1a1f27 100%);
+      border-radius: 24px;
+      padding: 50px 40px;
+      margin: 20px;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(212, 165, 67, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .impact-section h2 { 
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .impact-section > p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
     .impact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 25px;
+      position: relative;
+      z-index: 1;
     }
+
     .impact-stat {
-      padding: 20px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 12px;
-      color: white;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 30px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
     }
-    .impact-stat .number { font-size: 2em; font-weight: bold; }
-    .impact-stat .label { font-size: 0.9em; opacity: 0.9; }
-    
-    footer {
+
+    .impact-stat:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-5px);
+    }
+
+    .impact-stat .number { 
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold-accent);
+      display: block;
+    }
+
+    .impact-stat .label { 
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: var(--white);
       text-align: center;
-      color: white;
-      padding: 40px 20px;
-      opacity: 0.8;
+      padding: 70px 20px;
     }
-    footer a { color: white; }
-    
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.8em; }
-      .event-header { flex-direction: column; text-align: center; }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      color: var(--dark-navy);
+      margin-bottom: 15px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 35px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary-teal);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(33, 150, 164, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(33, 150, 164, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-teal);
+      border: 2px solid var(--primary-teal);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-teal);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark-navy);
+      text-align: center;
+      color: var(--white);
+      padding: 50px 20px;
+    }
+
+    footer .footer-logo {
+      width: 80px;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    footer h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      opacity: 0.7;
+      font-size: 0.95rem;
+    }
+
+    footer .footer-links {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    footer a { 
+      color: var(--gold-accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .social-icons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background: var(--primary-teal);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .event-card {
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    .event-card:nth-child(1) { animation-delay: 0.1s; }
+    .event-card:nth-child(2) { animation-delay: 0.2s; }
+    .event-card:nth-child(3) { animation-delay: 0.3s; }
+    .event-card:nth-child(4) { animation-delay: 0.4s; }
+    .event-card:nth-child(5) { animation-delay: 0.5s; }
+    .event-card:nth-child(6) { animation-delay: 0.6s; }
+    .event-card:nth-child(7) { animation-delay: 0.7s; }
+    .event-card:nth-child(8) { animation-delay: 0.8s; }
+    .event-card:nth-child(9) { animation-delay: 0.9s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 50px 15px 70px;
+      }
+
+      .logo {
+        width: 90px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .hero-tagline {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+      }
+
+      .intro-section {
+        padding: 40px 15px;
+      }
+
+      .intro-icons {
+        gap: 25px;
+      }
+
+      .events-section {
+        padding: 40px 15px 60px;
+      }
+
+      .event-header { 
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .event-emoji {
+        font-size: 2.5rem;
+      }
+
+      .event-title {
+        font-size: 1.2rem;
+      }
+
+      .event-body {
+        padding: 25px 20px;
+      }
+
+      .impact-section {
+        margin: 15px;
+        padding: 40px 20px;
+      }
+
+      .impact-stat .number {
+        font-size: 2rem;
+      }
+
+      .cta-section {
+        padding: 50px 15px;
+      }
+
+      .btn {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+      }
+
+      footer {
+        padding: 40px 15px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .december-gala {
+        grid-column: span 2;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>🌟 EPF 2026 Events</h1>
-      <p>Creating Opportunities for Single-Parent Families</p>
-    </header>
 
-    <div class="events-grid">
-      
-      <!-- MAY -->
-      <div class="event-card may">
-        <div class="event-header">
-          <div class="event-emoji">🌸</div>
-          <div>
-            <div class="event-date">Saturday, May 2, 2026</div>
-            <div class="event-title">Mother's Day Blessing Baskets</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Venue:</strong> Locker Room, Detroit</li>
-            <li><strong>Setup:</strong> 1:00 PM</li>
-            <li><strong>Event:</strong> 3:00 - 8:00 PM</li>
-            <li><strong>Goal:</strong> 100 baskets for single moms</li>
-            <li><strong>Vibe:</strong> House music day party with DJ Bruce Bailey</li>
-          </ul>
-          <div class="highlight">
-            <strong>🎁 Want to volunteer or donate?</strong> Contact us!
-          </div>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="assets/logos/epf-logo-transparent.png" alt="Empowerment Path Foundation Logo" class="logo">
+      <h1>EPF <span class="year">2026</span> Events</h1>
+      <p>Join us in creating moments of joy, support, and empowerment for single-parent families across Detroit.</p>
+      <div class="hero-tagline">
+        <i class="fas fa-heart"></i>
+        <span>9 Events • 500+ Families • 1 Community</span>
       </div>
-
-      <!-- JUNE -->
-      <div class="event-card june">
-        <div class="event-header">
-          <div class="event-emoji">👔</div>
-          <div>
-            <div class="event-date">Sunday, June 14, 2026</div>
-            <div class="event-title">Father's Day Recognition Brunch</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Theme:</strong> "Dads Who Show Up"</li>
-            <li><strong>Venue:</strong> Locker Room, Detroit</li>
-            <li><strong>Time:</strong> 11:00 AM - 2:00 PM</li>
-            <li><strong>Format:</strong> Brunch + Awards Ceremony</li>
-            <li><strong>Honoring:</strong> Outstanding single dads & father figures</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- JULY -->
-      <div class="event-card july">
-        <div class="event-header">
-          <div class="event-emoji">☀️</div>
-          <div>
-            <div class="event-date">Saturday, July 19, 2026</div>
-            <div class="event-title">Summer Day Party Fundraiser</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Theme:</strong> "Summer Vibes for a Cause"</li>
-            <li><strong>Venue:</strong> Locker Room, Detroit</li>
-            <li><strong>Time:</strong> 3:00 - 8:00 PM</li>
-            <li><strong>Features:</strong> Day party + Raffle + Donations</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- AUGUST -->
-      <div class="event-card august">
-        <div class="event-header">
-          <div class="event-emoji">🎒</div>
-          <div>
-            <div class="event-date">Saturday, August 9, 2026</div>
-            <div class="event-title">Back-to-School Supply Drive</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Theme:</strong> "Ready, Set, Learn!"</li>
-            <li><strong>Time:</strong> 12:00 - 5:00 PM</li>
-            <li><strong>Format:</strong> Block party style</li>
-            <li><strong>Features:</strong> Free backpacks, haircuts, uniform swap</li>
-            <li><strong>Goal:</strong> 200 backpacks distributed</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- SEPTEMBER -->
-      <div class="event-card september">
-        <div class="event-header">
-          <div class="event-emoji">🎤</div>
-          <div>
-            <div class="event-date">Saturday, September 20, 2026</div>
-            <div class="event-title">Comedy Night Fundraiser</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Theme:</strong> "Laugh for a Cause"</li>
-            <li><strong>Time:</strong> 7:00 - 10:00 PM</li>
-            <li><strong>Features:</strong> Live comedians, silent auction</li>
-            <li><strong>Tickets:</strong> $30-50</li>
-            <li><strong>Goal:</strong> 100+ attendees</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- OCTOBER -->
-      <div class="event-card october">
-        <div class="event-header">
-          <div class="event-emoji">🎃</div>
-          <div>
-            <div class="event-date">Saturday, October 26, 2026</div>
-            <div class="event-title">Family Halloween Carnival</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Format:</strong> Trunk or Treat + Carnival Games</li>
-            <li><strong>Time:</strong> 2:00 - 6:00 PM</li>
-            <li><strong>Features:</strong> Face painting, costume contest</li>
-            <li><strong>FREE</strong> for all families!</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- NOVEMBER -->
-      <div class="event-card november">
-        <div class="event-header">
-          <div class="event-emoji">🦃</div>
-          <div>
-            <div class="event-date">Sunday, November 22, 2026</div>
-            <div class="event-title">Thanksgiving Family Feast</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Theme:</strong> "Grateful Together"</li>
-            <li><strong>Time:</strong> 12:00 - 4:00 PM</li>
-            <li><strong>Features:</strong> Hot meal + Turkey giveaway</li>
-            <li><strong>Goal:</strong> Feed 150 families</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- DECEMBER - Baskets -->
-      <div class="event-card december-baskets">
-        <div class="event-header">
-          <div class="event-emoji">🎄</div>
-          <div>
-            <div class="event-date">Saturday, December 14, 2026</div>
-            <div class="event-title">Holiday Blessing Baskets & Toy Drive</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Theme:</strong> "Season of Giving"</li>
-            <li><strong>Venue:</strong> Locker Room, Detroit</li>
-            <li><strong>Time:</strong> 3:00 - 8:00 PM</li>
-            <li><strong>Features:</strong> Gift baskets, toy drive, photos with Santa</li>
-            <li><strong>Goal:</strong> 100 baskets + 200 toys</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- DECEMBER - Gala -->
-      <div class="event-card december-gala">
-        <div class="event-header">
-          <div class="event-emoji">✨</div>
-          <div>
-            <div class="event-date">Saturday, December 5, 2026</div>
-            <div class="event-title">Annual Gala — "Empowering Futures"</div>
-          </div>
-        </div>
-        <div class="event-body">
-          <ul>
-            <li><strong>Format:</strong> Semi-formal dinner + Program</li>
-            <li><strong>Features:</strong> Cocktail hour, awards, live auction</li>
-            <li><strong>Tickets:</strong> $75-150</li>
-            <li><strong>Sponsor Tables:</strong> $1,000-5,000</li>
-          </ul>
-          <div class="highlight">
-            <strong>🌟 Our signature year-end celebration!</strong>
-          </div>
-        </div>
-      </div>
-
     </div>
+    <div class="wave-divider">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.1,118.92,156.63,69.08,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </section>
 
-    <!-- Impact Section -->
-    <div class="impact-section">
-      <h2>📊 2026 Goals</h2>
-      <div class="impact-grid">
-        <div class="impact-stat">
-          <div class="number">500+</div>
-          <div class="label">Families Served</div>
+  <!-- Intro Section -->
+  <section class="intro-section">
+    <div class="container">
+      <h2>Empowering Parents. Uplifting Families.</h2>
+      <p>Every event we host is designed with love—creating opportunities for connection, celebration, and support when it's needed most.</p>
+      <div class="intro-icons">
+        <div class="intro-icon">
+          <i class="fas fa-hands-holding-heart"></i>
+          <span>Community</span>
         </div>
-        <div class="impact-stat">
-          <div class="number">$40K</div>
-          <div class="label">Fundraising Goal</div>
+        <div class="intro-icon">
+          <i class="fas fa-gift"></i>
+          <span>Giving</span>
         </div>
-        <div class="impact-stat">
-          <div class="number">200+</div>
-          <div class="label">Volunteers</div>
+        <div class="intro-icon">
+          <i class="fas fa-users"></i>
+          <span>Family</span>
         </div>
-        <div class="impact-stat">
-          <div class="number">9</div>
-          <div class="label">Events</div>
+        <div class="intro-icon">
+          <i class="fas fa-star"></i>
+          <span>Hope</span>
         </div>
       </div>
     </div>
+  </section>
 
-    <footer>
-      <p><strong>Empowerment Path Foundation</strong></p>
-      <p>Creating Opportunities for Single-Parent Families</p>
-      <p style="margin-top: 15px;"><a href="index.html">← Back to Home</a></p>
-    </footer>
-  </div>
+  <!-- Events Section -->
+  <section class="events-section">
+    <div class="container">
+      <div class="events-grid">
+        
+        <!-- MAY -->
+        <div class="event-card may">
+          <div class="event-header">
+            <div class="event-emoji">🌸</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Saturday, May 2, 2026</div>
+              <div class="event-title">Mother's Day Blessing Baskets</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Venue:</strong> Locker Room, Detroit</li>
+              <li><strong>Setup:</strong> 1:00 PM</li>
+              <li><strong>Event:</strong> 3:00 - 8:00 PM</li>
+              <li><strong>Goal:</strong> 100 baskets for single moms</li>
+              <li><strong>Vibe:</strong> House music day party with DJ Bruce Bailey</li>
+            </ul>
+            <div class="event-highlight">
+              <i class="fas fa-gift"></i>
+              <span><strong>Want to volunteer or donate?</strong> We'd love your help!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- JUNE -->
+        <div class="event-card june">
+          <div class="event-header">
+            <div class="event-emoji">👔</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Sunday, June 14, 2026</div>
+              <div class="event-title">Father's Day Recognition Brunch</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Theme:</strong> "Dads Who Show Up"</li>
+              <li><strong>Venue:</strong> Locker Room, Detroit</li>
+              <li><strong>Time:</strong> 11:00 AM - 2:00 PM</li>
+              <li><strong>Format:</strong> Brunch + Awards Ceremony</li>
+              <li><strong>Honoring:</strong> Outstanding single dads & father figures</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JULY -->
+        <div class="event-card july">
+          <div class="event-header">
+            <div class="event-emoji">☀️</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Saturday, July 19, 2026</div>
+              <div class="event-title">Summer Day Party Fundraiser</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Theme:</strong> "Summer Vibes for a Cause"</li>
+              <li><strong>Venue:</strong> Locker Room, Detroit</li>
+              <li><strong>Time:</strong> 3:00 - 8:00 PM</li>
+              <li><strong>Features:</strong> Day party + Raffle + Donations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- AUGUST -->
+        <div class="event-card august">
+          <div class="event-header">
+            <div class="event-emoji">🎒</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Saturday, August 9, 2026</div>
+              <div class="event-title">Back-to-School Supply Drive</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Theme:</strong> "Ready, Set, Learn!"</li>
+              <li><strong>Time:</strong> 12:00 - 5:00 PM</li>
+              <li><strong>Format:</strong> Block party style</li>
+              <li><strong>Features:</strong> Free backpacks, haircuts, uniform swap</li>
+              <li><strong>Goal:</strong> 200 backpacks distributed</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SEPTEMBER -->
+        <div class="event-card september">
+          <div class="event-header">
+            <div class="event-emoji">🎤</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Saturday, September 20, 2026</div>
+              <div class="event-title">Comedy Night Fundraiser</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Theme:</strong> "Laugh for a Cause"</li>
+              <li><strong>Time:</strong> 7:00 - 10:00 PM</li>
+              <li><strong>Features:</strong> Live comedians, silent auction</li>
+              <li><strong>Tickets:</strong> $30-50</li>
+              <li><strong>Goal:</strong> 100+ attendees</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- OCTOBER -->
+        <div class="event-card october">
+          <div class="event-header">
+            <div class="event-emoji">🎃</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Saturday, October 26, 2026</div>
+              <div class="event-title">Family Halloween Carnival</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Format:</strong> Trunk or Treat + Carnival Games</li>
+              <li><strong>Time:</strong> 2:00 - 6:00 PM</li>
+              <li><strong>Features:</strong> Face painting, costume contest</li>
+              <li><strong>FREE</strong> for all families!</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- NOVEMBER -->
+        <div class="event-card november">
+          <div class="event-header">
+            <div class="event-emoji">🦃</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Sunday, November 22, 2026</div>
+              <div class="event-title">Thanksgiving Family Feast</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Theme:</strong> "Grateful Together"</li>
+              <li><strong>Time:</strong> 12:00 - 4:00 PM</li>
+              <li><strong>Features:</strong> Hot meal + Turkey giveaway</li>
+              <li><strong>Goal:</strong> Feed 150 families</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DECEMBER - Baskets -->
+        <div class="event-card december-baskets">
+          <div class="event-header">
+            <div class="event-emoji">🎄</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Saturday, December 14, 2026</div>
+              <div class="event-title">Holiday Blessing Baskets & Toy Drive</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Theme:</strong> "Season of Giving"</li>
+              <li><strong>Venue:</strong> Locker Room, Detroit</li>
+              <li><strong>Time:</strong> 3:00 - 8:00 PM</li>
+              <li><strong>Features:</strong> Gift baskets, toy drive, photos with Santa</li>
+              <li><strong>Goal:</strong> 100 baskets + 200 toys</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DECEMBER - Gala (SIGNATURE EVENT) -->
+        <div class="event-card december-gala">
+          <span class="signature-badge">✨ Signature Event</span>
+          <div class="event-header">
+            <div class="event-emoji">🌟</div>
+            <div class="event-header-text">
+              <div class="event-date"><i class="far fa-calendar-alt"></i> Saturday, December 5, 2026</div>
+              <div class="event-title">Annual Gala — "Empowering Futures"</div>
+            </div>
+          </div>
+          <div class="event-body">
+            <ul>
+              <li><strong>Format:</strong> Semi-formal dinner + Program</li>
+              <li><strong>Features:</strong> Cocktail hour, awards, live auction</li>
+              <li><strong>Tickets:</strong> $75-150</li>
+              <li><strong>Sponsor Tables:</strong> $1,000-5,000</li>
+            </ul>
+            <div class="event-highlight">
+              <i class="fas fa-star"></i>
+              <span><strong>Our signature year-end celebration!</strong> Join us for an unforgettable evening.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="impact-section">
+    <h2>Our 2026 Goals</h2>
+    <p>Together, we're building a stronger community.</p>
+    <div class="impact-grid">
+      <div class="impact-stat">
+        <span class="number">500+</span>
+        <span class="label">Families Served</span>
+      </div>
+      <div class="impact-stat">
+        <span class="number">$40K</span>
+        <span class="label">Fundraising Goal</span>
+      </div>
+      <div class="impact-stat">
+        <span class="number">200+</span>
+        <span class="label">Volunteers</span>
+      </div>
+      <div class="impact-stat">
+        <span class="number">9</span>
+        <span class="label">Events</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Be Part of the Movement</h2>
+      <p>Whether you volunteer, donate, or simply spread the word—your support makes a real difference in families' lives.</p>
+      <div class="cta-buttons">
+        <a href="index.html#donate" class="btn btn-primary">
+          <i class="fas fa-heart"></i> Donate Now
+        </a>
+        <a href="index.html#contact" class="btn btn-secondary">
+          <i class="fas fa-hands-helping"></i> Get Involved
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="assets/logos/epf-logo-transparent.png" alt="EPF Logo" class="footer-logo">
+    <h3>Empowerment Path Foundation</h3>
+    <p>Empowering Parents. Uplifting Families. Building Brighter Futures.</p>
+    
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:EmpowermentPathFoundation@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Empowerment Path Foundation • Detroit, MI</p>
+      <p>A program of Bringing Back the Block • 501(c)(3) Nonprofit</p>
+    </div>
+  </footer>
+
 </body>
 </html>
