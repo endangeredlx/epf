@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>EPF 2026 Event Calendar</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; color: #333; }
+    h1 { color: #2c5aa0; border-bottom: 3px solid #2c5aa0; padding-bottom: 10px; }
+    h2 { color: #4a7c59; margin-top: 30px; }
+    h3 { color: #2c5aa0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background-color: #2c5aa0; color: white; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    .event-box { background: #f5f5f5; border-left: 4px solid #4a7c59; padding: 15px; margin: 15px 0; }
+    .event-title { font-size: 1.2em; font-weight: bold; color: #2c5aa0; }
+    .event-date { color: #666; font-style: italic; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 3px; }
+    ul { line-height: 1.8; }
+    .logo { text-align: center; margin-bottom: 20px; }
+    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<h1>🌟 EPF 2026 Event Calendar</h1>
+<p><strong>Empowerment Path Foundation</strong> — Creating Opportunities for Single-Parent Families</p>
+
+<hr>
+
+<h2>📅 Year at a Glance</h2>
+<table>
+  <tr>
+    <th>Month</th>
+    <th>Event</th>
+    <th>Type</th>
+    <th>Revenue Focus</th>
+  </tr>
+  <tr><td><strong>May</strong></td><td>🌸 Mother's Day Baskets</td><td>Service + Fundraiser</td><td>Donations</td></tr>
+  <tr><td><strong>June</strong></td><td>👔 Father's Day Brunch</td><td>Recognition</td><td>Tickets</td></tr>
+  <tr><td><strong>July</strong></td><td>☀️ Summer Day Party</td><td>Fundraiser</td><td>Venue %</td></tr>
+  <tr><td><strong>August</strong></td><td>🎒 Back-to-School Drive</td><td>Service</td><td>Sponsorships</td></tr>
+  <tr><td><strong>September</strong></td><td>🎤 Comedy Night</td><td>Fundraiser</td><td>Tickets + Auction</td></tr>
+  <tr><td><strong>October</strong></td><td>🎃 Halloween Carnival</td><td>Community</td><td>Minimal</td></tr>
+  <tr><td><strong>November</strong></td><td>🦃 Thanksgiving Feast</td><td>Service</td><td>Sponsorships</td></tr>
+  <tr><td><strong>December</strong></td><td>🎄 Holiday Baskets + Toys</td><td>Service + Fundraiser</td><td>Donations</td></tr>
+</table>
+
+<hr>
+
+<h2>Q2 (April - June)</h2>
+
+<div class="event-box">
+  <div class="event-title">🌸 May 2 — Mother's Day Blessing Baskets Assembly</div>
+  <div class="event-date">STATUS: ✅ CONFIRMED</div>
+  <ul>
+    <li><strong>Venue:</strong> Locker Room, Detroit</li>
+    <li><strong>Time:</strong> 3-8 PM (setup 12:30 PM)</li>
+    <li><strong>Goal:</strong> 100 baskets for single moms</li>
+    <li><strong>DJ:</strong> Bruce Bailey (house music day party)</li>
+    <li><strong>Revenue:</strong> Donations + 10% venue sales</li>
+  </ul>
+</div>
+
+<div class="event-box">
+  <div class="event-title">👔 June 14 — Father's Day Recognition Brunch</div>
+  <div class="event-date">Theme: "Dads Who Show Up"</div>
+  <ul>
+    <li><strong>Venue:</strong> TBD (church fellowship hall or community center)</li>
+    <li><strong>Time:</strong> 11 AM - 2 PM</li>
+    <li><strong>Format:</strong> Brunch + awards ceremony for outstanding single dads</li>
+    <li><strong>Revenue:</strong> Ticket sales ($25-35), sponsorships</li>
+    <li><strong>Partners:</strong> Local barbershops, men's groups</li>
+    <li><strong>Goal:</strong> 50-75 attendees</li>
+  </ul>
+</div>
+
+<h2>Q3 (July - September)</h2>
+
+<div class="event-box">
+  <div class="event-title">☀️ July 19 — Summer Day Party Fundraiser</div>
+  <div class="event-date">Theme: "Summer Vibes for a Cause"</div>
+  <ul>
+    <li><strong>Venue:</strong> Locker Room (repeat partnership)</li>
+    <li><strong>Time:</strong> 3-8 PM</li>
+    <li><strong>Format:</strong> Day party + raffle + donation drive</li>
+    <li><strong>Revenue:</strong> 10% venue sales + raffle tickets + cash donations</li>
+  </ul>
+</div>
+
+<div class="event-box">
+  <div class="event-title">🎒 August 9 — Back-to-School Supply Drive & Block Party</div>
+  <div class="event-date">Theme: "Ready, Set, Learn!"</div>
+  <ul>
+    <li><strong>Venue:</strong> Outdoor park or parking lot (block party style)</li>
+    <li><strong>Time:</strong> 12-5 PM</li>
+    <li><strong>Format:</strong> Free backpacks, haircut station, school uniform swap, resource fair</li>
+    <li><strong>Revenue:</strong> Corporate sponsorships, in-kind donations</li>
+    <li><strong>Sponsors:</strong> Office Depot, Target, Walmart, local banks</li>
+    <li><strong>Goal:</strong> 200 backpacks distributed</li>
+  </ul>
+</div>
+
+<div class="event-box">
+  <div class="event-title">🎤 September 20 — Comedy Night Fundraiser</div>
+  <div class="event-date">Theme: "Laugh for a Cause"</div>
+  <ul>
+    <li><strong>Venue:</strong> Locker Room or comedy club</li>
+    <li><strong>Time:</strong> 7-10 PM</li>
+    <li><strong>Format:</strong> 3-4 comedians, ticket sales, VIP tables, silent auction</li>
+    <li><strong>Revenue:</strong> Tickets ($30-50), VIP tables ($250-500), auction</li>
+    <li><strong>Goal:</strong> 100+ attendees, $5,000+ raised</li>
+  </ul>
+</div>
+
+<h2>Q4 (October - December)</h2>
+
+<div class="event-box">
+  <div class="event-title">🎃 October 26 — Family Halloween Carnival</div>
+  <div class="event-date">Theme: Trunk or Treat + Carnival Games</div>
+  <ul>
+    <li><strong>Venue:</strong> Church parking lot or community center</li>
+    <li><strong>Time:</strong> 2-6 PM</li>
+    <li><strong>Format:</strong> Trunk or Treat, carnival games, face painting, costume contest</li>
+    <li><strong>Revenue:</strong> Community building focus (minimal)</li>
+    <li><strong>Goal:</strong> 100 families served</li>
+  </ul>
+</div>
+
+<div class="event-box">
+  <div class="event-title">🦃 November 22 — Thanksgiving Family Feast + Grocery Giveaway</div>
+  <div class="event-date">Theme: "Grateful Together"</div>
+  <ul>
+    <li><strong>Venue:</strong> Community center or church</li>
+    <li><strong>Time:</strong> 12-4 PM</li>
+    <li><strong>Format:</strong> Hot Thanksgiving meal, grocery gift cards, turkey giveaway</li>
+    <li><strong>Sponsors:</strong> Kroger, Meijer, local grocery stores</li>
+    <li><strong>Goal:</strong> Feed 150 families, 50 turkeys distributed</li>
+  </ul>
+</div>
+
+<div class="event-box">
+  <div class="event-title">🎄 December 14 — Holiday Blessing Baskets & Toy Drive</div>
+  <div class="event-date">Theme: "Season of Giving"</div>
+  <ul>
+    <li><strong>Venue:</strong> Locker Room (Q4 day party)</li>
+    <li><strong>Time:</strong> 3-8 PM</li>
+    <li><strong>Format:</strong> Gift baskets for single moms, toy drive, photos with Santa</li>
+    <li><strong>Goal:</strong> 100 baskets + 200 toys distributed</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>💰 Projected Annual Impact</h2>
+<table>
+  <tr><th>Metric</th><th>Goal</th></tr>
+  <tr><td>Families Served</td><td>500+</td></tr>
+  <tr><td>Total Raised</td><td>$25,000-40,000</td></tr>
+  <tr><td>Volunteers Engaged</td><td>200+</td></tr>
+  <tr><td>Corporate Sponsors</td><td>15-20</td></tr>
+  <tr><td>Community Events</td><td>8</td></tr>
+</table>
+
+<div class="footer">
+  <p><strong>Empowerment Path Foundation</strong><br>
+  Created March 26, 2026</p>
+</div>
+
+</body>
+</html>
