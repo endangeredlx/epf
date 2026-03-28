@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Empowerment Path Foundation</title>
+  <meta name="description" content="Stories of empowerment, community events, and resources for single-parent families in Detroit.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary-teal: #2196A4;
+      --teal-dark: #1a7a8a;
+      --teal-light: #e8f6f7;
+      --gold-accent: #D4A543;
+      --dark-navy: #3a3f47;
+      --text-dark: #333333;
+      --text-muted: #666666;
+      --white: #ffffff;
+      --warm-cream: #FFF9F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: 'Open Sans', sans-serif; 
+      background: var(--warm-cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--primary-teal) 0%, var(--teal-dark) 50%, var(--dark-navy) 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .nav-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-back:hover { opacity: 0.8; }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--dark-navy);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 25px;
+    }
+
+    .blog-category {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--primary-teal);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .blog-category.events { background: #fef3e2; color: #d4a543; }
+    .blog-category.programs { background: var(--teal-light); color: var(--primary-teal); }
+
+    .blog-content h3 {
+      font-size: 1.4rem;
+      color: var(--dark-navy);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .blog-content p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      color: var(--primary-teal);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .read-more:hover { color: var(--teal-dark); }
+
+    /* Featured Post */
+    .featured-post {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+      margin-bottom: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .featured-post img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 400px;
+    }
+
+    .featured-content {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-accent);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .featured-content h2 {
+      font-size: 2rem;
+      color: var(--dark-navy);
+      margin-bottom: 15px;
+    }
+
+    .featured-content p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary-teal);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .btn:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-navy);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer a { color: var(--gold-accent); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+      .featured-post img {
+        min-height: 300px;
+      }
+      .featured-content {
+        padding: 30px;
+      }
+      .header h1 { font-size: 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" style="position: relative;">
+    <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    <h1>EPF Blog</h1>
+    <p>Stories of empowerment, community impact, and the families we serve in Detroit.</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- Featured Post -->
+    <article class="featured-post">
+      <img src="images/mothers-day-2026-flyer.jpg" alt="Mother's Day Blessing Baskets 2026">
+      <div class="featured-content">
+        <span class="featured-badge"><i class="fas fa-star"></i> Featured Event</span>
+        <h2>Mother's Day Blessing Baskets 2026</h2>
+        <p>Join us on May 2nd as we assemble 100 gift baskets for single mothers across Detroit. From self-care items to heartfelt notes, each basket brings joy to moms who give so much to their families.</p>
+        <a href="events.html" class="btn">View All Events <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- Programs Section -->
+    <div class="section-title">
+      <h2>Our Programs</h2>
+      <p>Empowering families through education, resources, and community support.</p>
+    </div>
+
+    <div class="blog-grid">
+      
+      <article class="blog-card">
+        <img src="images/blog-lifeskills.jpg" alt="Life Skills Workshop">
+        <div class="blog-content">
+          <span class="blog-category programs">Programs</span>
+          <h3>Building Stronger Families Through Life Skills</h3>
+          <p>Our workshops cover budgeting, stress management, parenting strategies, and conflict resolution. Learn the tools to thrive.</p>
+          <a href="index.html#programs" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/blog-entrepreneur.jpg" alt="Entrepreneur Development">
+        <div class="blog-content">
+          <span class="blog-category programs">Programs</span>
+          <h3>From Dream to Business: Entrepreneur Development</h3>
+          <p>We help aspiring business owners create plans, access micro-lending, and build sustainable enterprises in their communities.</p>
+          <a href="index.html#programs" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/blog-gardening.jpg" alt="Urban Gardening">
+        <div class="blog-content">
+          <span class="blog-category programs">Programs</span>
+          <h3>Growing Food, Growing Community</h3>
+          <p>Our agriculture program teaches urban farming, food preservation, and nutrition. Fresh produce for families, grown by families.</p>
+          <a href="index.html#programs" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/blog-resources.jpg" alt="Resource Hub">
+        <div class="blog-content">
+          <span class="blog-category programs">Programs</span>
+          <h3>Connecting Families to Essential Resources</h3>
+          <p>Housing assistance, childcare referrals, healthcare navigation, and employment support. We help you find what you need.</p>
+          <a href="index.html#programs" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/blog-housing.jpg" alt="Duplex Initiative">
+        <div class="blog-content">
+          <span class="blog-category programs">Programs</span>
+          <h3>The Duplex Initiative: Affordable Housing</h3>
+          <p>In partnership with Bringing Back the Block, we're creating affordable housing options for single-parent families in Detroit.</p>
+          <a href="index.html#programs" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/blog-production.jpg" alt="Technical Production Training">
+        <div class="blog-content">
+          <span class="blog-category programs">Programs</span>
+          <h3>Careers in Entertainment: Production Training</h3>
+          <p>Learn lighting, audio, and event production from industry professionals. A pathway to high-paying creative careers.</p>
+          <a href="index.html#programs" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Events Section -->
+    <div class="section-title" style="margin-top: 80px;">
+      <h2>Upcoming Events</h2>
+      <p>9 events in 2026 serving 500+ families across Detroit.</p>
+    </div>
+
+    <div class="blog-grid">
+      
+      <article class="blog-card">
+        <img src="images/fathers-day-event.jpg?v=2" alt="Father's Day Brunch">
+        <div class="blog-content">
+          <span class="blog-category events">Events</span>
+          <h3>Father's Day Recognition Brunch</h3>
+          <p>June 14th: Honoring outstanding single dads and father figures with a special brunch and awards ceremony.</p>
+          <a href="events.html" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/summer-party-event.jpg?v=2" alt="Summer Day Party">
+        <div class="blog-content">
+          <span class="blog-category events">Events</span>
+          <h3>Summer Day Party Fundraiser</h3>
+          <p>July 19th: Summer vibes for a cause! Join us for music, raffles, and community fun while supporting Detroit families.</p>
+          <a href="events.html" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/back-to-school-event.jpg?v=2" alt="Back to School Drive">
+        <div class="blog-content">
+          <span class="blog-category events">Events</span>
+          <h3>Back-to-School Supply Drive</h3>
+          <p>August 9th: Free backpacks, haircuts, and uniform swaps for kids heading back to school. Goal: 200 backpacks!</p>
+          <a href="events.html" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/comedy-night-event.jpg?v=2" alt="Comedy Night">
+        <div class="blog-content">
+          <span class="blog-category events">Events</span>
+          <h3>Comedy Night Fundraiser</h3>
+          <p>September 20th: Laugh for a cause with live comedians and a silent auction. Tickets $30-50.</p>
+          <a href="events.html" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/halloween-event.jpg?v=2" alt="Halloween Carnival">
+        <div class="blog-content">
+          <span class="blog-category events">Events</span>
+          <h3>Family Halloween Carnival</h3>
+          <p>October 26th: Trunk or treat, carnival games, face painting, and costume contests. FREE for all families!</p>
+          <a href="events.html" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="images/gala-event.jpg?v=2" alt="Annual Gala">
+        <div class="blog-content">
+          <span class="blog-category events">Events</span>
+          <h3>Annual Gala: Empowering Futures</h3>
+          <p>December 5th: Our signature year-end celebration with dinner, awards, and live auction. Tickets $75-150.</p>
+          <a href="events.html" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Empowerment Path Foundation &bull; Detroit, MI</p>
+    <p style="margin-top: 10px;"><a href="index.html">Home</a> &bull; <a href="events.html">Events</a> &bull; <a href="mailto:EmpowermentPathFoundation@gmail.com">Contact</a></p>
+  </footer>
+
+</body>
+</html>
