@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1350">
+    <title>Father's Day Blessing Baskets - EPF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1080px;
+            height: 1400px;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+        
+        .flyer {
+            width: 1080px;
+            height: 1400px;
+            background: linear-gradient(180deg, 
+                #2a8ab4 0%, 
+                #1a6b8a 15%, 
+                #0d5573 35%,
+                #0a4560 55%,
+                #163d55 75%,
+                #0d2840 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative radial overlay */
+        .radial-overlay {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1200px;
+            height: 600px;
+            background: radial-gradient(ellipse at center, rgba(60, 180, 220, 0.3) 0%, transparent 70%);
+            z-index: 1;
+        }
+        
+        /* Background father images */
+        .bg-fathers {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 350px;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            z-index: 2;
+        }
+        
+        .father-img-left, .father-img-right {
+            width: 350px;
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: sepia(20%) saturate(150%);
+        }
+        
+        .father-img-left {
+            background: linear-gradient(135deg, rgba(26, 107, 138, 0.8), transparent 70%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="20" fill="%23a0d4e8"/><ellipse cx="50" cy="80" rx="25" ry="20" fill="%23a0d4e8"/><circle cx="30" cy="65" r="12" fill="%2390c4d8"/></svg>');
+            border-radius: 0 0 180px 0;
+        }
+        
+        .father-img-right {
+            background: linear-gradient(-135deg, rgba(26, 107, 138, 0.8), transparent 70%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="20" fill="%23a0d4e8"/><ellipse cx="50" cy="80" rx="25" ry="20" fill="%23a0d4e8"/><circle cx="70" cy="65" r="12" fill="%2390c4d8"/></svg>');
+            border-radius: 0 0 0 180px;
+        }
+        
+        /* Locker Room Logo */
+        .locker-room-logo {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(145deg, #d42a47 0%, #b01530 50%, #8b0d22 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #6b0a15;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.5), inset 0 2px 10px rgba(255,255,255,0.2);
+            z-index: 20;
+        }
+        
+        .locker-room-logo .top-text {
+            font-size: 8px;
+            color: white;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+        
+        .locker-room-logo .main-text {
+            font-size: 15px;
+            color: white;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.1;
+        }
+        
+        .locker-room-logo .bottom-text {
+            font-size: 7px;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+        
+        /* EPF Header */
+        .epf-header {
+            position: absolute;
+            top: 170px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            z-index: 20;
+        }
+        
+        /* Father's Day Banner */
+        .fathers-day-banner {
+            position: absolute;
+            top: 215px;
+            left: 50%;
+            transform: translateX(-50%) perspective(500px) rotateX(5deg);
+            background: linear-gradient(180deg, #3a7ca5 0%, #1a4a66 50%, #0d2840 100%);
+            padding: 15px 100px 18px;
+            border-radius: 8px 8px 15px 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4), inset 0 2px 5px rgba(255,255,255,0.1);
+            z-index: 15;
+        }
+        
+        .fathers-day-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .fathers-day-banner h2 {
+            font-family: 'Playfair Display', serif;
+            color: #f0d060;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 6px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4), 0 0 20px rgba(240, 208, 96, 0.3);
+        }
+        
+        /* Blessing Baskets Title */
+        .blessing-baskets {
+            position: absolute;
+            top: 280px;
+            width: 100%;
+            text-align: center;
+            z-index: 18;
+        }
+        
+        .blessing-baskets h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 130px;
+            color: white;
+            text-shadow: 
+                4px 4px 8px rgba(0,0,0,0.5),
+                0 0 40px rgba(255,255,255,0.3),
+                0 0 80px rgba(100, 200, 255, 0.2);
+            line-height: 0.9;
+        }
+        
+        /* Basket and Gift Items Visual */
+        .basket-visual {
+            position: absolute;
+            top: 350px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 550px;
+            height: 280px;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .basket-container {
+            position: relative;
+            width: 400px;
+            height: 250px;
+        }
+        
+        /* Decorative gift elements */
+        .gift-element {
+            position: absolute;
+            font-size: 55px;
+            filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.4));
+            z-index: 12;
+        }
+        
+        .gift-1 { top: 330px; left: 80px; transform: rotate(-15deg); }
+        .gift-2 { top: 360px; left: 180px; }
+        .gift-3 { top: 320px; right: 180px; transform: rotate(10deg); }
+        .gift-4 { top: 380px; right: 80px; transform: rotate(-5deg); }
+        .gift-5 { top: 430px; left: 120px; transform: rotate(8deg); }
+        .gift-6 { top: 440px; right: 130px; transform: rotate(-8deg); }
+        
+        /* Center basket emoji larger */
+        .main-basket {
+            position: absolute;
+            top: 360px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 150px;
+            filter: drop-shadow(5px 8px 15px rgba(0,0,0,0.5));
+            z-index: 11;
+        }
+        
+        /* Event Date */
+        .event-date {
+            position: absolute;
+            top: 600px;
+            width: 100%;
+            text-align: center;
+            z-index: 20;
+        }
+        
+        .event-date .main-date {
+            font-size: 58px;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+        }
+        
+        /* Event Times */
+        .event-times {
+            position: absolute;
+            top: 680px;
+            width: 60%;
+            left: 8%;
+            z-index: 20;
+        }
+        
+        .time-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 12px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .time-label {
+            font-size: 22px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            min-width: 380px;
+        }
+        
+        .time-value {
+            font-size: 22px;
+            font-weight: 600;
+            color: #d4e8f0;
+        }
+        
+        /* Gold Badge */
+        .gold-badge {
+            position: absolute;
+            top: 650px;
+            right: 50px;
+            width: 210px;
+            height: 210px;
+            background: linear-gradient(145deg, 
+                #f5e27a 0%, 
+                #d4af37 25%, 
+                #c9a030 50%, 
+                #d4af37 75%, 
+                #b8960b 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 8px 30px rgba(0,0,0,0.5),
+                inset 0 3px 15px rgba(255,255,255,0.4),
+                inset 0 -3px 10px rgba(0,0,0,0.2);
+            z-index: 25;
+            transform: rotate(5deg);
+            border: 3px solid #a07c10;
+        }
+        
+        .gold-badge .badge-line {
+            font-size: 15px;
+            font-weight: 800;
+            color: #1a3a5c;
+            text-align: center;
+            line-height: 1.4;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+        }
+        
+        .gold-badge .badge-number {
+            font-size: 32px;
+            font-weight: 900;
+            color: #8b1a1a;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+        }
+        
+        .gold-badge .badge-small {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+        
+        .gold-badge .coming-together {
+            font-size: 12px;
+            font-weight: 800;
+            color: #1a3a5c;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+        
+        /* CTA Strip */
+        .cta-strip {
+            position: absolute;
+            top: 895px;
+            width: 100%;
+            background: linear-gradient(90deg, #0a1f30 0%, #1a3a5c 50%, #0a1f30 100%);
+            padding: 18px 0;
+            text-align: center;
+            z-index: 20;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-strip p {
+            color: white;
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* Tagline */
+        .tagline {
+            position: absolute;
+            top: 960px;
+            width: 100%;
+            text-align: center;
+            z-index: 20;
+        }
+        
+        .tagline p {
+            font-size: 28px;
+            font-weight: 800;
+            color: #f0d060;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Address */
+        .address {
+            position: absolute;
+            top: 1010px;
+            width: 100%;
+            text-align: center;
+            z-index: 20;
+        }
+        
+        .address p {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Distribution Info */
+        .distribution {
+            position: absolute;
+            top: 1055px;
+            width: 100%;
+            text-align: center;
+            z-index: 20;
+        }
+        
+        .distribution p {
+            font-size: 17px;
+            color: #a8d0e8;
+            font-weight: 500;
+        }
+        
+        .distribution .recipients {
+            font-size: 15px;
+            margin-top: 5px;
+            color: #90c0d8;
+        }
+        
+        /* Website */
+        .website {
+            position: absolute;
+            top: 1115px;
+            width: 100%;
+            text-align: center;
+            z-index: 20;
+        }
+        
+        .website p {
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        /* Partner Logos */
+        .partner-logos {
+            position: absolute;
+            bottom: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 35px;
+            z-index: 20;
+            padding: 0 40px;
+        }
+        
+        .partner-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .partner-logo img {
+            object-fit: contain;
+            filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
+        }
+        
+        .partner-logo.epf-logo img {
+            height: 110px;
+            width: auto;
+        }
+        
+        .partner-logo.cots-logo img {
+            height: 65px;
+            width: auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+        
+        .partner-logo.afg-logo img {
+            height: 50px;
+            width: auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 8px;
+            padding: 10px 15px;
+        }
+        
+        .partner-logo.bbb-logo img {
+            height: 105px;
+            width: auto;
+        }
+        
+        /* Bottom gradient overlay */
+        .bottom-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 250px;
+            background: linear-gradient(to top, rgba(13, 40, 64, 0.9), transparent);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <!-- Decorative overlays -->
+        <div class="radial-overlay"></div>
+        <div class="bottom-gradient"></div>
+        
+        <!-- Background father silhouettes -->
+        <div class="bg-fathers">
+            <div class="father-img-left"></div>
+            <div class="father-img-right"></div>
+        </div>
+        
+        <!-- Locker Room Logo -->
+        <div class="locker-room-logo">
+            <span class="top-text">DRINKS • FOOD • SPORTS</span>
+            <span class="main-text">LOCKER</span>
+            <span class="main-text">ROOM</span>
+            <span class="bottom-text">DETROIT • EST. 1985</span>
+        </div>
+        
+        <!-- EPF Header -->
+        <div class="epf-header">
+            EMPOWERMENT PATH FOUNDATION
+        </div>
+        
+        <!-- Father's Day Banner -->
+        <div class="fathers-day-banner">
+            <h2>FATHER'S DAY</h2>
+        </div>
+        
+        <!-- Blessing Baskets Title -->
+        <div class="blessing-baskets">
+            <h1>Blessing Baskets</h1>
+        </div>
+        
+        <!-- Gift Elements -->
+        <div class="gift-element gift-1">🎁</div>
+        <div class="gift-element gift-2">👔</div>
+        <div class="gift-element gift-3">⌚</div>
+        <div class="gift-element gift-4">🧴</div>
+        <div class="gift-element gift-5">🎽</div>
+        <div class="gift-element gift-6">🧢</div>
+        
+        <!-- Main Basket -->
+        <div class="main-basket">🧺</div>
+        
+        <!-- Event Date -->
+        <div class="event-date">
+            <span class="main-date">SAT. JUNE. 13</span>
+        </div>
+        
+        <!-- Event Times -->
+        <div class="event-times">
+            <div class="time-row">
+                <span class="time-label">SETUP</span>
+                <span class="time-value">1PM - 2PM</span>
+            </div>
+            <div class="time-row">
+                <span class="time-label">DONATION DROP OFF</span>
+                <span class="time-value">2PM - 5PM</span>
+            </div>
+            <div class="time-row">
+                <span class="time-label">BASKET ASSEMBLY EVENT</span>
+                <span class="time-value">3PM - 8PM</span>
+            </div>
+        </div>
+        
+        <!-- Gold Badge -->
+        <div class="gold-badge">
+            <span class="badge-line"><span class="badge-number">100</span> <span class="badge-small">BASKETS</span></span>
+            <span class="badge-line"><span class="badge-number">100</span> <span class="badge-small">FATHERS</span></span>
+            <span class="badge-line"><span class="badge-number">1</span> <span class="badge-small">COMMUNITY</span></span>
+            <span class="coming-together">COMING TOGETHER</span>
+        </div>
+        
+        <!-- CTA Strip -->
+        <div class="cta-strip">
+            <p>DROP OFF DONATIONS AND/OR HELP ASSEMBLE GIFT BASKETS</p>
+        </div>
+        
+        <!-- Tagline -->
+        <div class="tagline">
+            <p>FOOD PROVIDED • GREAT COMPANY • REAL IMPACT</p>
+        </div>
+        
+        <!-- Address -->
+        <div class="address">
+            <p>18290 LIVERNOIS AVE, DETROIT, MI 48221</p>
+        </div>
+        
+        <!-- Distribution Info -->
+        <div class="distribution">
+            <p>Baskets will be distributed June 20, 2026 (Father's Day weekend)</p>
+            <p class="recipients">Recipients: COTS, Alternatives for Girls, Community Partners</p>
+        </div>
+        
+        <!-- Website -->
+        <div class="website">
+            <p>EmpowermentPathFoundation.org</p>
+        </div>
+        
+        <!-- Partner Logos -->
+        <div class="partner-logos">
+            <div class="partner-logo epf-logo">
+                <img src="assets/logos/epf-logo-transparent.png" alt="Empowerment Path Foundation">
+            </div>
+            <div class="partner-logo cots-logo">
+                <img src="assets/logos/cots-logo.png" alt="COTS - Hope Help Housing">
+            </div>
+            <div class="partner-logo afg-logo">
+                <img src="assets/logos/alternatives-for-girls-logo.png" alt="Alternatives For Girls">
+            </div>
+            <div class="partner-logo bbb-logo">
+                <img src="assets/logos/bbb-logo.jpg" alt="Bringing Back The Block">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
